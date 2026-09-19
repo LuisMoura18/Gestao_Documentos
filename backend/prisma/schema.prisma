@@ -1,0 +1,27 @@
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Document {
+  id        Int      @id @default(autoincrement())
+  title     String
+  description String?
+  nameFile  String
+  dataUpload DateTime @default(now())
+  comments  Comment[]
+}
+
+model Comment{
+  id        Int     @id @default(autoincrement())
+  text      String
+  date      DateTime @default(now())
+  document  Document @relation(fields: [documentId], references: [id])
+  documentId Int
+}
