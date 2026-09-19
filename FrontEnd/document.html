@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do documento</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Pagina inicial">
+        <img class="brand-mark" src="./assets/logo_advocacia.png" alt="RMH Advocacia">
+    </a>
+    <a class="back-link" href="index.html">← Voltar para documentos</a>
+  </header>
+
+  <main class="page-shell detail-page">
+    <div id="detail-feedback" class="feedback" role="status"></div>
+    <section id="document-detail" class="detail-layout">
+      <div class="detail-main">
+        <p class="eyebrow">Documento</p>
+        <h1 id="document-title">Carregando...</h1>
+        <p id="document-description" class="detail-description"></p>
+        <div class="detail-actions">
+          <a id="download-link" class="button button-dark" href="#">Baixar arquivo <span>↓</span></a>
+          <span id="document-date" class="detail-date"></span>
+        </div>
+      </div>
+      <aside class="file-card">
+        <span class="file-card-label">Arquivo anexado</span>
+        <span id="document-file" class="file-card-name">-</span>
+        <span class="file-card-hint">Disponivel para download</span>
+      </aside>
+    </section>
+
+    <section class="comments-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Colaboracao</p>
+          <h2>Comentarios</h2>
+        </div>
+        <span id="comment-count" class="count-badge">0</span>
+      </div>
+      <form id="comment-form" class="comment-form">
+        <label class="sr-only" for="comment-text">Novo comentario</label>
+        <textarea id="comment-text" rows="3" placeholder="Escreva uma observacao sobre este documento..." required></textarea>
+        <div class="comment-form-footer">
+          <button class="button button-accent" type="submit">Adicionar comentario <span>→</span></button>
+        </div>
+      </form>
+      <div id="comments-list" class="comments-list" aria-live="polite"></div>
+    </section>
+  </main>
+  <script src="js/document.js"></script>
+</body>
+</html>

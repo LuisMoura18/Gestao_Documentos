@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestao de documentos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Pagina inicial">
+      <img class="brand-mark" src="./assets/logo_advocacia.png" alt="RMH Advocacia">
+    </a>
+    <span class="status"><span class="status-dot"></span> Biblioteca interna</span>
+  </header>
+
+  <main class="page-shell">
+    <section class="workspace-grid">
+      <section class="panel upload-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Novo registro</p>
+            <h2>Adicionar documento</h2>
+          </div>
+          <span class="panel-icon">+</span>
+        </div>
+        <form id="upload-form" class="upload-form">
+          <label class="field-label" for="title">Titulo</label>
+          <input id="title" name="title" type="text" placeholder="Ex.: Contrato de fornecimento" required>
+          <label class="field-label" for="description">Descricao <span>(opcional)</span></label>
+          <textarea id="description" name="description" rows="3" placeholder="Adicione um contexto breve"></textarea>
+          <label class="file-drop" for="file">
+            <span class="file-icon">↑</span>
+            <span><strong id="file-name">Escolha um arquivo</strong><small>PDF, DOCX, XLSX ou imagem</small></span>
+            <input id="file" name="file" type="file" required>
+          </label>
+          <button class="button button-dark" type="submit"><span>Salvar documento</span><span>→</span></button>
+          <p id="upload-feedback" class="feedback" role="status"></p>
+        </form>
+      </section>
+
+      <section class="documents-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Visao geral</p>
+            <h2>Documentos recentes</h2>
+          </div>
+          <button id="refresh-button" class="icon-button" type="button" title="Atualizar lista" aria-label="Atualizar lista">↻</button>
+        </div>
+        <div id="documents-list" class="documents-list" aria-live="polite">
+          <div class="loading-state">Carregando documentos...</div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="js/index.js"></script>
+</body>
+</html>
