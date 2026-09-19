@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000';
+const API_URL = window.location.protocol === 'file:' ? 'http://localhost:3000' : window.location.origin;
 
 const listElement = document.querySelector('#documents-list');
 const form = document.querySelector('#upload-form');

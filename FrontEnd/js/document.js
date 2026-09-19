@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000';
+const API_URL = window.location.protocol === 'file:' ? 'http://localhost:3000' : window.location.origin;
 const documentId = new URLSearchParams(window.location.search).get('id');
 
 const titleElement = document.querySelector('#document-title');
