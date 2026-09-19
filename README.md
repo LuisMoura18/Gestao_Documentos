@@ -128,7 +128,7 @@ A aplicação já está configurada para se comunicar com a API em `http://local
 
 ## Link do deploy
  
-> URL do backend publicado: ``
+`https://gestao-documentos-bmhu.onrender.com/`
 
 ---
 
